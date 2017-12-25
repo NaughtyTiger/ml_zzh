@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import ml_zzh.decisionTree.exception.DecisionTreeLeafInitException;
 
-public class DecisionTreeLeaf {
+public class DecisionTreeLeaf extends DecisionTreeNode {
   public HashMap<String, String> discreteValues=new HashMap<>();
   public HashMap<String, Double> continuousValues=new HashMap<>();
   private String result;
@@ -38,12 +38,19 @@ public class DecisionTreeLeaf {
     return result;
   }
   
+  public void printRec(int lv, StringBuffer result){
+//    for(int i=0; i<lv; i++){
+//      result.append("--");
+//    }
+//    result.append(this.toString());
+//    result.append("\n");
+  }
+  
   @Override
   public String toString(){
     StringBuffer sb=new StringBuffer();
     sb.append(discreteValues.toString());
     sb.append(continuousValues.toString());
-    sb.append("\n");
     sb.append(result);
     return sb.toString();
   }

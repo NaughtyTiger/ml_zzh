@@ -8,7 +8,7 @@ import java.io.IOException;
 import ml_zzh.decisionTree.exception.DecisionTreeLeafInitException;
 
 public class DecisionTree {
-  DecisionTreeBranch root;
+  public DecisionTreeBranch root;
   
   private DecisionTree(){
     

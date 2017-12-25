@@ -1,4 +1,7 @@
 package ml_zzh.decisionTree;
 
-public class DecisionTreeNode {
+public abstract class DecisionTreeNode {
+  public abstract String getResult();
+  
+  public abstract void printRec(int lv, StringBuffer result);
 }
