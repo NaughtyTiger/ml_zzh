@@ -14,7 +14,7 @@ public class DecisionTree {
     
   }
   
-  public static DecisionTree create(File file){
+  public static DecisionTree createByEntropyGain(File file){
     DecisionTree tree=new DecisionTree();
     try {
       BufferedReader br=new BufferedReader(new FileReader(file));
@@ -27,9 +27,10 @@ public class DecisionTree {
           tree.root.addChildrenLeaf(leaf);
         } catch (DecisionTreeLeafInitException e) {
           e.printStackTrace(System.err);
+          System.err.println(values);
         }
       }
-      tree.root.separatedRecursive();
+      tree.root.separatedRecursiveByEntropyGain();
       br.close();
     } catch (IOException e) {
       e.printStackTrace(System.err);
